@@ -8,8 +8,8 @@ const engineer = require('./lib/engineer');
 const employees = [];
 
 // beginning of the manager prompts
-const addManager = () => {
-    return inquirer.prompt ([ {
+const addManager = [{
+    
         type: 'input',
         name: 'name',
         message: 'Enter the name of the manager (Required)',
@@ -21,7 +21,7 @@ const addManager = () => {
                 console.log('Please enter the name of the manager');
                 return false;
             }
-        }
+        },
 
     },
     {
@@ -36,7 +36,7 @@ const addManager = () => {
                 console.log('Please enter the managers employee id');
                 return false;
             }
-        }
+        },
 
     },
     {
@@ -52,7 +52,7 @@ const addManager = () => {
                 console.log('Please enter a valid email address');
                 return false;
             }
-        }
+        },
     
     },
     {
@@ -67,14 +67,25 @@ const addManager = () => {
                 console.log('Please enter the managers office number');
                 return false;
             }
-        }
+        },
     },
-    {
-        type: 'confirm',
-        name: 'addTm',
-        message: 'Would you like to add an Engineer or Intern to the team?',
-        default: true
-    }
+   
 
-    ])
+    ]
+
+
+const tmQuestions = [
+{
+    type: 'confirm',
+    name: 'addTm',
+    message: 'Would you like to add an Engineer or Intern to the team?',
+    default: true
+},
+{
+   type: 'checkbox',
+   name: 'tmType',
+   message: 'Please confirm wether the new team member is an Engineer or Intern',
+   choices: ['Engineer', 'Intern'],
+   when: ({ addTm }) => addTm
 }
+]
