@@ -8,7 +8,8 @@ const engineer = require('./lib/engineer');
 const employees = [];
 
 // beginning of the manager prompts
-const addManager = [{
+const addManager = [
+    {
     
         type: 'input',
         name: 'name',
@@ -43,16 +44,15 @@ const addManager = [{
        type: 'input',
        name: 'email',
        message: 'Enter the managers email (Required)',
-        validate: function (email) {
-            valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-            if(valid) {
-                return true;
-            }
-            else {
-                console.log('Please enter a valid email address');
-                return false;
-            }
-        },
+       validate: email => {
+        if(email) {
+            return true;
+        }
+        else {
+            console.log('Please enter the email for the the manager');
+            return false;
+        }
+    },
     
     },
     {
@@ -73,7 +73,7 @@ const addManager = [{
 
     ]
 
-
+// prompts to add another team member to the team
 const tmQuestions = [
 {
     type: 'confirm',
@@ -89,7 +89,7 @@ const tmQuestions = [
    when: ({ addTm }) => addTm
 }
 ]
-
+// Beginning of the intern prompts
 const internQuestions = [
     {
         type: 'input',
@@ -143,6 +143,65 @@ const internQuestions = [
             }
             else {
                 console.log('Please enter the school the intern attended');
+                return false;
+            }
+        },
+    }
+]
+// beginning of the engineer prompts
+const engineerQuestions = [
+    {
+        type: 'input',
+        name: 'engName',
+        message: 'Enter the name of the Engineer',
+        validate: engName => {
+            if(engName) {
+                return true;
+            }
+            else {
+                console.log('Please enter the name of the Engineer');
+                return false;
+            }
+        },
+    },
+    {
+        type: 'input',
+        name: 'engId',
+        message: 'Enter the Engineers ID',
+        validate: engId => {
+            if(engId) {
+                return true;
+            }
+            else {
+                console.log('Please enter an ID for the engineer');
+                return false;
+            }
+        },
+    },
+    {
+        type: 'input',
+        name: 'engEmail',
+        message: 'Enter the email address for the engineer',
+        validate: engEmail => {
+            if(engEmail) {
+                return true;
+            }
+            else {
+                console.log('Please enter the email address for the engineer');
+                return false;
+            }
+        },
+    },
+    {
+        type: 'input',
+        name: 'engGithub',
+        message: 'Enter the github username for the engineer',
+        validate: engGithub => {
+            if(engGithub) {
+                return true;
+            }
+            else {
+                console.log('Please enter the github username for the engineer');
                 return false;
             }
         },
