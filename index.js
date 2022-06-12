@@ -89,3 +89,62 @@ const tmQuestions = [
    when: ({ addTm }) => addTm
 }
 ]
+
+const internQuestions = [
+    {
+        type: 'input',
+        name: 'internName',
+        message: 'Enter the interns name',
+        validate: internName => {
+            if (internName) {
+                return true;
+            }
+            else {
+                console.log('Please enter the name of the intern');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'internId',
+        message: 'Enter the interns ID',
+        validate: internId => {
+            if(internId) {
+                return true;
+            }
+            else {
+                console.log('Please enter the ID of the intern');
+                return false;
+            }
+        },
+    },
+    {
+        type: 'input',
+        name: 'internEmail',
+        message: 'Enter the interns email address',
+        validate: internEmail => {
+            if(internEmail) {
+                return true;
+            }
+            else {
+                console.log('Please enter the interns email address');
+                return false;
+            }
+        },
+    },
+    {
+        type: 'input',
+        name: 'internSchool',
+        message: 'Enter the name of the interns school',
+        validate: internSchool => {
+            if(internSchool) {
+                return true;
+            }
+            else {
+                console.log('Please enter the school the intern attended');
+                return false;
+            }
+        },
+    }
+]
