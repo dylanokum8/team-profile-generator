@@ -9,8 +9,9 @@ const employees = [];
 
 // beginning of the manager prompts
 const addManager = [
-    {
     
+  
+{
         type: 'input',
         name: 'name',
         message: 'Enter the name of the manager (Required)',
@@ -69,9 +70,13 @@ const addManager = [
             }
         },
     },
-   
 
-    ]
+]
+
+
+
+
+    
 
 // prompts to add another team member to the team
 const tmQuestions = [

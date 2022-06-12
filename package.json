@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "i": "^0.3.7"
+    "i": "^0.3.7",
+    "inquirer": "^8.2.4"
   },
   "name": "team-profile-generator",
   "description": "",
@@ -9,7 +10,6 @@
   "directories": {
     "lib": "lib"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,5 +22,7 @@
   "bugs": {
     "url": "https://github.com/dylanokum8/team-profile-generator/issues"
   },
-  "homepage": "https://github.com/dylanokum8/team-profile-generator#readme"
+  "homepage": "https://github.com/dylanokum8/team-profile-generator#readme",
+  "devDependencies": {},
+  "keywords": []
 }
